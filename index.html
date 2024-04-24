@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Інтернет-магазин WebShopPal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/logo4.png" type="image/x-icon">
+    <!-- Додано посилання на бібліотеку Font Awesome для іконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Стилі для корзини */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .cart-content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .close-cart {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .show-cart {
+            display: flex;
+        }
+        /* Стилі для товарів у корзині */
+        .cart-item {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .cart-item-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .cancel-purchase {
+            margin-left: auto;
+            cursor: pointer;
+        }
+        .quantity-select {
+            margin-left: auto;
+            display: flex;
+        }
+        .quantity-select button {
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .payment-icon, .continue-shopping-icon {
+            font-size: 24px;
+            margin-left: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="block1">
+        <nav class="nawbar">
+            <div class="container">
+                <a href="#" class="nawbar-brand">WebShopPal</a>
+                <div class="nawbar-wrap">
+                    <ul class="nawbar-menu">
+                        <li><a href="#">Головне меню</a></li>
+                        <li><a href="#">Каталог</a></li>
+                        <li><a href="#">Пошук</a></li>
+                        <li><a href="#">Акції</a></li>
+                    </ul>
+                    <a href="#" class="callback">Мій кабінет</a>
+                    <!-- Додано іконку корзини -->
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart" id="cart-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="block2">
+        <div class="banner">
+            <div class="animated">
+                <div class="text1">Тільки цього тижня</div>
+                <div class="text2">Знижка 15%</div>
+            </div>
+        </div>
+    </div>
+    <div class="block3">
+        <div class="product-container">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/Monitor1.png" alt="Product Image" width="0" height="0">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Монітор 23.8" Asus VG249Q (90LM05E0-B03170)</h3>
+                    <p class="product-price">Ціна:7 999₴</p>
+                    <div class="quantity-select">
+                        <button class="decrease-quantity">-</button>
+                        <input type="number" class="quantity" value="1" min="1">
+                        <button class="increase-quantity">+</button>
+                    </div>
+                    <button class="add-to-cart">Добавить в корзину</button>
+                </div>
+            </div>
+            <!-- Додайте інші карточки товарів по аналогії -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/Monitor2.png" alt="Product Image" width="192" height="314.59">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Mонитор 23.5" Samsung Curved LS24C366</h3>
+                    <p class="product-price">Ціна:4 399₴</p>
+                    <div class="quantity-select">
+                        <button class="decrease-quantity">-</button>
+                        <input type="number" class="quantity" value="1" min="1">
+                        <button class="increase-quantity">+</button>
+                    </div>
+                    <button class="add-to-cart">Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/Monitor3.png" alt="Product Image" width="192" height="314.59">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Монитор 23.8" Xiaomi Mi Desktop Monitor 1 </h3>
+                    <p class="product-price">Ціна:3 999₴</p>
+                    <div class="quantity-select">
+                        <button class="decrease-quantity">-</button>
+                        <input type="number" class="quantity" value="1" min="1">
+                        <button class="increase-quantity">+</button>
+                    </div>
+                    <button class="add-to-cart">Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/Monitor4.png" alt="Product Image" width="192" height="314.59">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Монитор 23.8" Acer Nitro Gaming VG240YEbmiix (UM.QV0EE.E09) FHD IPS / 100 Гц / 1 ms VRB / AMD FreeSync / BlueLightShield / Flickerless / Low Dimming</h3>
+                    <p class="product-price">Ціна: 4 499₴</p>
+                    <div class="quantity-select">
+                        <button class="decrease-quantity">-</button>
+                        <input type="number" class="quantity" value="1" min="1">
+                        <button class="increase-quantity">+</button>
+                    </div>
+                    <button class="add-to-cart">Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/Monitor5.png" alt="Product Image" width="192" height="314.59">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Монитор 23.8" Acer Nitro QG240YS3bipx (UM.QQ0EE.304) FullHD VA / 180Hz / 1ms / AMD FreeSync Premium / 8-Bit / 95% sRGB</h3>
+                    <p class="product-price">Ціна: 5 509₴</p>
+                    <div class="quantity-select">
+                        <button class="decrease-quantity">-</button>
+                        <input type="number" class="quantity" value="1" min="1">
+                        <button class="increase-quantity">+</button>
+                    </div>
+                    <button class="add-to-cart">Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/Monitor6.jpg" alt="Product Image" width="192" height="314.59">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Монитор 27" Gigabyte GS27FC -- FHD Super Speed VA / 1500R / 180Hz / 1ms / 8-Bit / sRGB 108% / FreeSync Premium Pro / Game Assist / Black eQualizer</h3>
+                    <p class="product-price">Ціна: 6 999₴</p>
+                    <div class="quantity-select">
+                        <button class="decrease-quantity">-</button>
+                        <input type="number" class="quantity" value="1" min="1">
+                        <button class="increase-quantity">+</button>
+                    </div>
+                    <button class="add-to-cart">Добавить в корзину</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cart" class="cart-overlay">
+        <div class="cart-content">
+            <span class="close-cart">&times;</span>
+            <h2>Корзина</h2>
+            <ul id="cart-items">
+                <!-- Сюди будуть додаватися елементи корзини -->
+            </ul>
+            <div class="payment-icon"><i class="fas fa-credit-card"></i> <a href="оплата.html">Оформити замовлення</a></div>
+            <div class="continue-shopping-icon"><i class="fas fa-shopping-bag"></i> Продовжити покупки</div>
+        </div>
+    </div>
+    <footer id="footer-section">
+        <div class="container">
+            <div class="footer">
+                <!-- Код блока підвалу -->
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Функція для додавання товару до корзини
+        function addToCart(productName, productImage, productPrice, quantity) {
+            const cartList = document.getElementById('cart-items');
+            const li = document.createElement('li');
+            li.classList.add('cart-item');
+            li.innerHTML = `
+                <img src="${productImage}" alt="Product Image">
+                <div class="cart-item-details">
+                    <h4>${productName}</h4>
+                    <p class="product-price" data-price="${productPrice}">${productPrice} x <input type="number" class="quantity" value="${quantity}" min="1"></p>
+                    <p class="total-price">${(parseFloat(productPrice) * quantity).toLocaleString('uk-UA', { style: 'currency', currency: 'UAH' })}</p>
+                </div>
+                <span class="cancel-purchase">&times;</span>
+            `;
+            cartList.appendChild(li);
+
+            // Додання обробника подій для відміни покупки
+            const cancelPurchaseBtn = li.querySelector('.cancel-purchase');
+            cancelPurchaseBtn.addEventListener('click', () => {
+                li.remove();
+            });
+
+            // Обробник подій для зміни кількості товару
+            const quantityInput = li.querySelector('.quantity');
+            quantityInput.addEventListener('change', () => {
+                const priceElement = li.querySelector('.product-price');
+                const price = parseFloat(priceElement.dataset.price); // Отримуємо ціну товару з дата-атрибуту
+                const quantity = parseInt(quantityInput.value);
+                const totalPriceElement = li.querySelector('.total-price');
+                const totalPrice = price * quantity;
+                totalPriceElement.textContent = totalPrice.toLocaleString('uk-UA', { style: 'currency', currency: 'UAH' });
+            });
+        }
+
+        // Отримуємо всі кнопки "Добавить в корзину" і додаємо обробник подій для кожної з них
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productTitle = button.parentNode.querySelector('.product-title').textContent;
+                const productImage = button.parentNode.parentNode.querySelector('.product-image img').getAttribute('src');
+                const productPrice = button.parentNode.querySelector('.product-price').textContent;
+                const quantity = parseInt(button.parentNode.querySelector('.quantity').value);
+                addToCart(productTitle, productImage, productPrice, quantity);
+            });
+        });
+
+        // Обробник подій для збільшення кількості товару
+        document.querySelectorAll('.increase-quantity').forEach(button => {
+            button.addEventListener('click', () => {
+                const input = button.parentNode.querySelector('.quantity');
+                input.value = parseInt(input.value) + 1;
+                input.dispatchEvent(new Event('change')); // Спровокувати подію зміни, щоб оновити відповідну ціну
+            });
+        });
+
+        // Обробник подій для зменшення кількості товару
+        document.querySelectorAll('.decrease-quantity').forEach(button => {
+            button.addEventListener('click', () => {
+                const input = button.parentNode.querySelector('.quantity');
+                const newValue = parseInt(input.value) - 1;
+                input.value = newValue > 0 ? newValue : 1;
+                input.dispatchEvent(new Event('change')); // Спровокувати подію зміни, щоб оновити відповідну ціну
+            });
+        });
+
+        // Показати корзину при натисканні на іконку корзини
+        const cartIcon = document.getElementById('cart-icon');
+        const cartOverlay = document.getElementById('cart');
+        cartIcon.addEventListener('click', () => {
+            cartOverlay.classList.toggle('show-cart');
+        });
+
+        // Закрити корзину при натисканні на кнопку закрити
+        const closeCartBtn = document.querySelector('.close-cart');
+        closeCartBtn.addEventListener('click', () => {
+            cartOverlay.classList.remove('show-cart');
+        });
+
+        // Обробник подій для іконки оформлення замовлення
+        const paymentIcon = document.querySelector('.payment-icon');
+        paymentIcon.addEventListener('click', () => {
+            // Додайте вашу логіку для переходу на сторінку оплати тут
+            window.location.href = 'оплата.html'; // Замініть 'оплата.html' на ваш URL сторінки оплати
+        });
+
+        // Обробник подій для іконки продовження покупок
+        const continueShoppingIcon = document.querySelector('.continue-shopping-icon');
+        continueShoppingIcon.addEventListener('click', () => {
+            // Закрити корзину
+            cartOverlay.classList.remove('show-cart');
+            // Додайте вашу логіку для продовження покупок тут
+            console.log('Продовження покупок...');
+        });
+    </script>
+
+           <div class="block5">
+            <footer id="footer-section">
+            <div class="container">
+                <div class="footer">
+                    <div class="footer-about">
+                        <div class="footer-logo-wrap">
+                            <img class="" src="img/logo4.png"  style="width:48px" height="48px" alt="WebShopPal">
+							<h3 class="footer-about__header">WebShopPal</h3>
+                        </div>
+                        
+                    </div>
+                    <div class="footer-nav-wrap">
+                        <div class="footer-nav">
+                            <h3 class="footer-nav__header">Компанія</h3>
+                            <ul class="footer-nav__list">
+                                <li class="footer-nav__item">
+                                    <a class="footer-nav__link" href="#">Про нас</a>
+                                </li>
+                                <li class="footer-nav__item">
+                                    <a class="footer-nav__link" href="#">Продукт</a>
+                                </li>
+                                <li class="footer-nav__item">
+                                    <a class="footer-nav__link" href="#">Відгук</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-nav">
+                            <h3 class="footer-nav__header">Підтримка</h3>
+                            <ul class="footer-nav__list">
+                                <li class="footer-nav__item">
+                                    <a class="footer-nav__link" href="#">Поширені запитання</a>
+                                </li>
+                                <li class="footer-nav__item">
+                                    <a class="footer-nav__link" href="#">Політика конфіденційності</a>
+                                </li>
+                                <li class="footer-nav__item">
+                                    <a class="footer-nav__link" href="#">Технічна підтримка</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-nav">
+                            <h3 class="footer-nav__header">Наша команда</h3>
+                            <ul class="footer-nav__list">
+                                <li class="footer-nav__item">
+                                    <a class="footer-nav__link" href="#">Вакансії</a>
+                                </li>
+                                <li class="footer-nav__item">
+                                    <a class="footer-nav__link" href="#">Наші Послуги</a>
+                                </li>
+                                <li class="footer-nav__item">
+                                    <a class="footer-nav__link" href="#">Контакти</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-social">
+                        <a class="footer-social__link" href="#"></a>
+                        <a class="footer-social__link" href="#"></a>
+                        <a class="footer-social__link" href="#"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container1">
+                    <p class="footer-copyright__text">©2024 WebShopPal. All right reserved</p>
+                </div>
+            </div>
+        </footer>
+    
+	</div>
+  	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
