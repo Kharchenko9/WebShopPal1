@@ -1,1 +1,437 @@
+/* Загальні стилі для body */
+body {
+    background-color: black; /* Колір фону сторінки */
+    margin: 0; /* Видаляємо зовнішній відступ у body */
+}
 
+/* Стилі для основного контейнера .body */
+.body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Фон контейнера */
+}
+
+/* Стилі для навігаційної панелі .nawbar */
+.nawbar {
+    background-color: black;
+    color: aqua;
+    padding: 15px 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+}
+/* Приклад стилізації іконок через класи Font Awesome */
+.fa-shopping-cart {
+    color: aliceblue; /* Задає колір іконки */
+    font-size: 
+        30px; /* Задає розмір шрифту (якщо потрібно) */
+    /* Додаткові стилі за вашим вибором */
+}
+
+/* Приклад стилізації іконок через класи Material Icons */
+.material-icons {
+    color: #00FF00; /* Задає колір іконки */
+    font-size: 24px; /* Задає розмір шрифту (якщо потрібно) */
+    /* Додаткові стилі за вашим вибором */
+}
+
+/* Стилі для контейнера .container всередині навігаційної панелі */
+
+.container {
+    max-width: 1800px;
+    width: 150%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Стилі для бренда в навігаційній панелі */
+.nawbar-brand {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+/* Стилі для меню в навігаційній панелі */
+.nawbar-menu {
+    list-style: none;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 200px; /* Вирівнюємо меню по центру */
+}
+
+/* Стилі для пунктів меню в навігаційній панелі */
+.nawbar-menu li {
+    margin: 0 30px; /* Зменшуємо відступ між пунктами меню */
+}
+
+/* Стилі для посилань в меню навігаційної панелі */
+.nawbar-menu li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 115px; /* Зменшуємо відступи навколо тексту */
+    transition: all .3s ease-in-out;
+}
+
+/* Стилі для hover-ефекту в меню навігаційній панелі */
+.nawbar-menu a:hover {
+    color: coral;
+}
+
+/* Стилі для посилання "Callback" */
+.callback {
+    text-decoration: none;
+    background-color: coral;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 60px;
+    font-weight: bold;
+    transition: background-color 0.10s ease;
+    margin-left: auto; /* Переміщуємо вправо */
+}
+
+/* Стилі для hover-ефекту на посиланні "Callback" */
+.callback:hover {
+    background-color: darkorange;
+}
+
+/* Стилі для обгортки навігаційної панелі */
+.nawbar-wrap {
+    display: flex;
+    align-items: center;
+}
+
+/* Стилі для змісту сторінки */
+.content {
+    padding: 80px 40px;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилі для заголовка h2 */
+h2 {
+    color: #333;
+}
+
+/* Стилі для розділу .section */
+.section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Стилі для загальних стилів .body */
+.body {
+    position: relative;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #000;
+    min-width: 320px;
+    overflow-x: hidden;
+    height: auto;
+}
+
+/* Стилі для блока .block */
+.block {
+    width: x; /* Ширина блока */
+    height: 400px; /* Висота блока */
+    background-color: #f0f0f0; /* Колір фону блока */
+    border: 1px solid #ccc; /* Межа блока */
+    margin: px; /* Відступ навколо блока */
+    padding: 1px; /* Внутрішній відступ блока */
+    float: left; /* Розташування блоків в ряд (зліва) */
+}
+
+/* Стилі для блока .block2 */
+.block2 {
+    width: -; /* Ширина блока */
+    height: 300px; /* Висота блока */
+    background-color: black; /* Колір фону блока */
+    border: 0px solid #ccc; /* Межа блока */
+    margin: 5px; /* Відступ навколо блока */
+    padding: -px; /* Внутрішній відступ блока */
+    float: left; /* Розташування блоків в ряд (зліва) */
+}
+
+/* Стилі для блока .block3 */
+.block3 {
+    width: px; /* Ширина блока */
+    height: 561px; /* Висота блока */
+    background-color: black;/* Колір фону блока */
+    border: 0px solid #ccc; /* Межа блока */
+    margin: 22px; /* Відступ навколо блока */
+    padding: 60px; /* Внутрішній відступ блока */
+    float: middle; /* Розташування блоків в ряд (зліва) */
+    margin-top: 320px; /* Задайте бажаний відступ зверху для*/
+}
+
+/* Стилі для блока .block4 */
+.block4 {
+    width: px; /* Ширина блока */
+    height: 300px; /* Висота блока */
+    background-color: black/* Колір фона блока */
+    border: 1px solid #ccc; /* Межа блока */
+    margin: 22px; /* Відступ навколо блока */
+    padding: 60px; /* Внутрішній відступ блока */
+    float: middle; /* Розташування блоків в ряду (зліва) */
+    margin-top: -0px; /* Задайте бажаний відступ зверху для другого блока */	
+}
+
+/* Стилі для блока .block5 */
+.block5 {
+    width: px; /* Ширина блока */
+    height: 1px; /* Висота блока */
+    background-color: chocolate; /* Колір фона блока */
+    border: px solid #ccc; /* Межа блока */
+    margin: px; /* Відступ навколо блока */
+    padding: 0px; /* Внутрішній відступ блока */
+    float: middle; /* Розташування блоків в ряду (зліва) */
+    margin-top: 0px; /* Задайте бажаний відступ зверху для другого блока */	
+}
+
+/* Стилі для обгортки .img-block2 */
+.img-block2 {
+    height: 1326px; /* Задайте бажану висоту */
+    overflow: hidden; /* Обрізаємо зображення, якщо воно перевищує висоту контейнера */
+}
+
+/* Стилі для зображення всередині .img-block2 */
+.img-block2 img {
+    width: 100%; /* Займає 100% ширини контейнера */
+    height: auto; /* Пристосовується до заданої ширини, щоб зберегти пропорції */
+}
+
+/* Загальні стилі для body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Стилі для контейнера продуктів .product-container */
+.product-container {
+    display: flex;
+    gap: 20px; /* Відстань між картками та кнопкою */
+    overflow-x: auto; /* Додає горизонтальний скролл, якщо карток багато */
+}
+
+/* Стилі для картки продукту .product-card */
+.product-card {
+    flex: 0 0 auto; /* Відключаємо збільшення розміру, щоб картки були однакового розміру */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px; /* Відступ навколо карток */
+    box-sizing: border-box; /* Враховуємо межі та внутрішній відступ в розмірах блоку */
+    width: 300px; /* Ширина картки */
+    display: flex;
+    flex-direction: column; /* Кожна картка буде в стовпці */
+	background-color: darkgray
+}
+
+.product-title{
+	color: aliceblue; /*Колір текста */
+}
+
+
+.product-price{
+	color: aliceblue; /*Колир ціни */
+}
+
+
+/* Стилі для зображення продукту в .product-image */
+.product-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Стилі для інформації про продукт в .product-info */
+.product-info {
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Стилі для кнопки "Додати до кошика" */
+.add-to-cart {
+    margin-top: auto; /* Розміщуємо кнопку в самому низу блоку */
+    background-color: darkorange;
+    color: aliceblue;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+/* Стилі для hover-ефекту на кнопці "Додати до кошика" */
+.add-to-cart:hover {
+    background-color: darkgreen;
+}
+
+/* Загальні стилі для body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Стилі для секції підвалу #footer-section */
+#footer-section {
+    padding-top: px;
+    background-color: #1F1905;
+}
+
+/* Стилі для блока підвалу .footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+/* Стилі для обгортки логотипу підвалу .footer-logo-wrap */
+.footer-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10x;
+    font-weight: 22px;
+	color: aliceblue;
+}
+
+/* Стилі для тексту "Про нас" в підвалі .footer-about__text */
+.footer-about__text {
+    max-width: 235px;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+/* Стилі для обгортки навігації в підвалі .footer-nav-wrap */
+.footer-nav-wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 350px;
+    margin: 65px 550px 0 auto;
+}
+
+/* Стилі для заголовка навігації в підвалі .footer-nav__header */
+.footer-nav__header {
+    margin-bottom: 37px;
+    font-size: 24px;
+    line-height: 20px;
+}
+
+/* Стилі для пунктів навігації в підвалі .footer-nav__item */
+.footer-nav__item {
+    margin-bottom: 30px;
+    line-height: 27px;
+}
+
+/* Стилі для посилань навігації в підвалі .footer-nav__link */
+.footer-nav__link {
+    color: rgb(255 255 255 / 80%);
+}
+
+/* Стилі для hover-ефекту на посиланнях навігації в підвалі .footer-nav__link */
+.footer-nav__link:hover {
+    color: #EE8313;
+}
+
+/* Стилі для посилань соціальних мереж в підвалі .footer-social__link */
+.footer-social__link {
+    display: block;
+    width: 39px;
+    height: 40px;
+    margin-bottom: 68px;
+    background: url(../img/fac.png) 50%/cover no-repeat;
+}
+
+/* Стилі для блока соціальних мереж в підвалі .footer-social */
+.footer-social {
+    margin-top: 60px;
+}
+
+/* Стилі для другого посилання в блоку соціальних мереж .footer-social__link:nth-child(2) */
+.footer-social__link:nth-child(2) {
+    background-image: url(../img/ins.png);
+}
+
+/* Стилі для третього посилання в блоку соціальних мереж .footer-social__link:nth-child(3) */
+.footer-social__link:nth-child(3) {
+    background-image: url(../img/you.png);
+    margin-bottom: 0;
+}
+
+/* Стилі для блока авторських прав в підвалі .footer-copyright */
+.footer-copyright {
+    padding: 2px 0;
+    background-color: #EE8313;
+}
+
+/* Стилі для тексту авторських прав в підвалі .footer-copyright__text */
+.footer-copyright__text {
+    text-align: center;
+}
+
+/* Ключові кадри для анімації тексту1 */
+@keyframes text1 {
+    10% { opacity: 1; }
+    40% { opacity: 0; }
+}
+
+/* Ключові кадри для анімації тексту2 */
+@keyframes text2 {
+    30% { opacity: 0; }
+    60% { opacity: 1; }
+}
+
+/* Ключові кадри для анімації банера */
+@keyframes banner {
+    10% { background-color: orange; }
+    40% { background-color: black; }
+    80% { background-color: orange; }
+}
+
+/* Стилі для блока банера .banner */
+.banner {
+    width: 1890px;
+    height: 300px;
+    background-color: #777;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Стилі для тексту1 та тексту2 в банері .text1, .text2 */
+.text1, .text2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 270px;
+    text-align: center;
+    font-size: 50px;
+    color: azure;
+    opacity: 0;
+}
+
+/* Анімація для тексту1 */
+.text1 {
+    animation: text1 6s infinite;
+}
+
+/* Анімація для тексту2 */
+.text2 {
+    animation: text2 6s infinite;
+}
+
+/* Анімація для блока банера */
+.animated {
+    opacity: 0.8;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #34495e;
+    animation: banner 6s infinite;
